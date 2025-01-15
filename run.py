@@ -20,7 +20,11 @@ async def main():
     dp.include_router(rstartr)
     dp.include_router(router)
     dp.include_router(routerl)
+    await dp.start_polling()
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print('Exit')
